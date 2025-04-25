@@ -18,11 +18,14 @@ const useSubmit = () => {
       if (random < 0.5) {
         throw new Error("Something went wrong");
       }
+
+      console.log("Success")
       setResponse({
         type: 'success',
         message: `Thanks for your submission ${data.firstName}, we will get back to you shortly!`,
       })
     } catch (error) {
+      console.log("Error")
       setResponse({
         type: 'error',
         message: 'Something went wrong, please try again later!',

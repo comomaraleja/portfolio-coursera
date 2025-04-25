@@ -27,9 +27,10 @@ const ContactMeSection = () => {
     initialValues: {
       firstName: "",
       email: "",
-      type: "",
+      type: "hireMe",
       comment: ""
     },
+
     onSubmit: async (values) => {
       firstNameRef.current = values.firstName; // store the name BEFORE submitting
       await submit("/api/contact", values);
@@ -45,20 +46,18 @@ const ContactMeSection = () => {
 
   useEffect(() => {
     if (response) {
+      console.log(response)
+
       if (response.type === "success") {
-        onOpen({
-          type: "success",
-          message: `Thank you, ${firstNameRef.current}. ${response.message}`,
-        });
+        onOpen( "success",`Thank you, ${firstNameRef.current}. ${response.message}`
+        );
         formik.resetForm();
       } else if (response.type === "error") {
-        onOpen({
-          type: "error",
-          message: response.message,
-        });
+        onOpen( "error", response.message
+        );
       }
     }
-  }, [response, onOpen]); 
+  }, [response]); 
 
   return (
     <FullScreenSection

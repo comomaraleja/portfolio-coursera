@@ -93,6 +93,7 @@ const Header = () => {
       transform="translateY(0)" // Default visible
       transition="transform 0.3s ease-in-out"
       backgroundColor="#18181b">
+        
       <Box color="white" maxWidth="1280px" margin="0 auto">
         <HStack
           px={16}

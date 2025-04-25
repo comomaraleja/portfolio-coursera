@@ -17,7 +17,7 @@ import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
 
-const LandingSection = () => {
+const ContactMeSection = () => {
   const { isLoading, response, submit } = useSubmit();
   const { onOpen } = useAlertContext();
 
@@ -79,8 +79,8 @@ const LandingSection = () => {
                 <FormLabel htmlFor="firstName">Name</FormLabel>
                 <Input
                  id="firstName"
-                 onChange={formik.handleChange}
-                 value={formik.values.firstName}
+                //  onChange={formik.handleChange}
+                //  value={formik.values.firstName}
                  placeholder="First Name"
                  {...formik.getFieldProps("firstName")}
                 />
@@ -91,8 +91,8 @@ const LandingSection = () => {
                 <FormLabel htmlFor="email">Email Address</FormLabel>
                 <Input
                   name="email"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
+                  // onChange={formik.handleChange}
+                  // value={formik.values.email}
                   placeholder="Email"
                   {...formik.getFieldProps("email")}
                 />
@@ -103,8 +103,8 @@ const LandingSection = () => {
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
                 <Select id="type"
                   name="type"
-                  onChange={formik.handleChange}
-                  value={formik.values.type}
+                  // onChange={formik.handleChange}
+                  // value={formik.values.type}
                   {...formik.getFieldProps("type")}
                 >
                   <option value="hireMe">Freelance project proposal</option>
@@ -117,8 +117,8 @@ const LandingSection = () => {
                 <FormLabel htmlFor="comment">Your message</FormLabel>
                 <Textarea
                   name="comment"
-                  onChange={formik.handleChange}
-                  value={formik.values.comment}
+                  // onChange={formik.handleChange}
+                  // value={formik.values.comment}
                   placeholder="Comment"
                   height={250}
                   {...formik.getFieldProps("comment")}
@@ -137,4 +137,4 @@ const LandingSection = () => {
   );
 };
 
-export default LandingSection;
+export default ContactMeSection;
